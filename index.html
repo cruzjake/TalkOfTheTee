@@ -542,9 +542,9 @@
 
   //create a functions to push
       function firebasePush(input) {
+        alert("test");
           //push itself
-          var mailsRef = firebase.database().ref('emails').push().set(
-              {
+          var mailsRef = firebase.database().ref('emails').push().set({
                   mail: input.value
               }
           );
