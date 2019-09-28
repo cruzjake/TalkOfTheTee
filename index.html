@@ -526,20 +526,23 @@
 
   //grab an input
   const inputEmail = form.querySelector('#email');
-  const inputMessege = form.querySelector('#messege');
+  const inputMessage = form.querySelector('#messege');
   const inputPhone = form.querySelector('#phone');
   const inputName = form.querySelector('#name');
 
 
   //create a functions to push
-      function firebasePush(input, inputEmail, inputPhone, inputMessege, inputName) {
+      function firebasePush(inputEmail, inputPhone, inputMessage, inputName) {
         alert("test");
           //push itself
           const mailsRef = firebase.database().ref("emails"); // Get an emails ref for the db
 
           const newMailRef = mailsRef.push(); // Get a ref to update the db section
 
-          alert(input.value);
+          alert(inputEmail.value);
+          alert(inputPhone.value);
+          alert(inputMessage.value);
+          alert(inputName.value);
 
           newMailRef.set({
             'mail': input.value,
@@ -551,7 +554,7 @@
       if (form) {
           form.addEventListener('submit', function (evt) {
               evt.preventDefault();
-              firebasePush(inputEmail, inputPhone, inputMessege, inputName);
+              firebasePush(inputEmail, inputPhone, inputMessage, inputName);
 
               //shows alert if everything went well.
               alert('Data Successfully Sent to Realtime Database');
