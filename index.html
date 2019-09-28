@@ -528,9 +528,9 @@
     appId: "1:923599241680:web:70328fb7db99e86dcc39d5"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  console.log(firebase);
+  firebase.initializeApp(firebaseConfig).then((firebase) => {
+    console.log(firebase);
+  });
 
   'use strict';
 
