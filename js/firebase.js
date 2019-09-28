@@ -19,6 +19,8 @@ const config = {
 
 
 //create a functions to push
+function firebase.database() {
+
     function firebasePush(input) {
 
 
@@ -35,7 +37,7 @@ const config = {
         );
 
     }
-
+}
 //push on form submit
     if (form) {
         form.addEventListener('submit', function (evt) {
