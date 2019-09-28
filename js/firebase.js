@@ -1,10 +1,10 @@
 'use strict';
 
 //grab a form
-const form = document.querySelector('.form-inline');
+const form = document.querySelector('#contactForm');
 
 //grab an input
-const inputEmail = form.querySelector('#inputEmail');
+const inputEmail = form.querySelector('#email');
 
 
 //config your firebase push
