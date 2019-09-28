@@ -19,30 +19,28 @@ const config = {
 
 
 //create a functions to push
-function firebase.database() {
-
     function firebasePush(input) {
 
 
         //prevents from braking
-        if (!firebase.apps.length) {
-            firebase.initializeApp(config);
+        if (!document.firebase.apps.length) {
+            document.firebase.initializeApp(config);
         }
 
         //push itself
-        var mailsRef = firebase.database().ref('emails').push().set(
+        var mailsRef = documents.firebase.database().ref('emails').push().set(
             {
                 mail: input.value
             }
         );
 
     }
-}
+
 //push on form submit
     if (form) {
         form.addEventListener('submit', function (evt) {
             evt.preventDefault();
-            firebasePush(inputEmail);
+            document.firebasePush(inputEmail);
 
             //shows alert if everything went well.
             return alert('Data Successfully Sent to Realtime Database');
