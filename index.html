@@ -526,7 +526,7 @@
 
   //grab an input
   const inputEmail = form.querySelector('#email');
-  const inpuMessege = form.querySelector('#messege');
+  const inputMessege = form.querySelector('#messege');
   const inputMessege = form.querySelector('#phone');
   const inputMessege = form.querySelector('#name');
 
@@ -552,6 +552,9 @@
           form.addEventListener('submit', function (evt) {
               evt.preventDefault();
               firebasePush(inputEmail);
+              firebasePush(inputMessege);
+              firebasePush(inputPhone);
+              firebasePush(inputName);
 
               //shows alert if everything went well.
               alert('Data Successfully Sent to Realtime Database');
