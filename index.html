@@ -540,10 +540,15 @@
       function firebasePush(input) {
         alert("test");
           //push itself
-          var mailsRef = firebase.database().ref('emails').push().set({
-                  mail: input.value
-              }
-          );
+          const mailsRef = firebase.database().ref("emails"); // Get an emails ref for the db
+
+          const newMailRef = mailsRef.push(); // Get a ref to update the db section
+
+          alert(input.value);
+
+          newMailRef.set({
+            'mail': input.value,
+          });
 
       }
 
@@ -553,10 +558,8 @@
               evt.preventDefault();
               firebasePush(inputEmail);
 
-              alert("test");
-
               //shows alert if everything went well.
-              return alert('Data Successfully Sent to Realtime Database');
+              alert('Data Successfully Sent to Realtime Database');
           })
       }
 </script>
