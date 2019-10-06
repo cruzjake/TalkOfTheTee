@@ -533,7 +533,6 @@
 
    //create a functions to push
       function firebasePush(inputEmail, inputPhone, inputMessage, inputName) {
-        alert("test");
           //push itself
           const mailsRef = firebase.database().ref("emails"); // Get an emails ref for the db
 
@@ -560,7 +559,7 @@
               firebasePush(inputEmail, inputPhone, inputMessage, inputName);
 
               //shows alert if everything went well.
-              alert('Data Successfully Sent to Realtime Database');
+              alert('Data Successfully Sent to Our Database');
           })
       }
 </script>
