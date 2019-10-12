@@ -521,30 +521,18 @@
 <script>
   // Your web app's Firebase configuration
 
-  //grab a form
-  const form = document.querySelector('#contactForm');
-
-  //grab an input
-  const inputEmail = document.getElementById('#email');
-  const inputMessage = document.getElementById('#message');
-  const inputPhone = document.getElementById('#phone');
-  const inputName = document.getElementById('#name');
-
 
    //create a functions to push
-      function firebasePush(inputEmail, inputPhone, inputMessage, inputName) {
+      function firebasePush(event) {
           //push itself
           const mailsRef = firebase.database().ref("emails"); // Get an emails ref for the db
 
           const newMailRef = mailsRef.push(); // Get a ref to update the db section
 
-          alert(inputEmail.value);
-          alert(inputPhone.value);
-          alert(inputMessage.value);
-          alert(inputName.value);
+          console.log(event);
 
           newMailRef.set({
-            'mail': inputEmail.value,
+            'mail': event.value,
             'message': inputPhone.value,
             'phone': inputMessage.value,
             'name': inputName.value
@@ -555,9 +543,8 @@
   //push on form submit
       if (form) {
           form.addEventListener('submit', function (evt) {
-            alert("test");
               evt.preventDefault();
-              firebasePush(inputEmail, inputPhone, inputMessage, inputName);
+              firebasePush(evt);
 
               //shows alert if everything went well.
               alert('Data Successfully Sent to Our Database');
