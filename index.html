@@ -538,7 +538,7 @@
           let i = 0;
 
           for (i = 0; i < event.target.length; i++) {
-            submission[fields[i]] = event.target[i];
+            submission[fields[i]] = event.target[i+""];
           }
 
           newMailRef.set(submission);
