@@ -532,14 +532,16 @@
 
           const newMailRef = mailsRef.push(); // Get a ref to update the db section
 
-          console.log(event);
+          var submission;
+          const fields = ['mail', 'message', 'phone', 'name'];
 
-          newMailRef.set({
-            'mail': event.value,
-            'message': inputPhone.value,
-            'phone': inputMessage.value,
-            'name': inputName.value
-          });
+          let i = 0;
+
+          for (i = 0; i < event.target.length; i++) {
+            submission[fields[i]] = event.target[i];
+          }
+
+          newMailRef.set(submission);
 
       }
 
