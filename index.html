@@ -532,7 +532,13 @@
 
           const newMailRef = mailsRef.push(); // Get a ref to update the db section
 
-          var submission;
+          let submission = {
+            'mail': '',
+            'message': '',
+            'phone': '',
+            'name': '',
+          };
+          
           const fields = ['mail', 'message', 'phone', 'name'];
 
           let i = 0;
