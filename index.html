@@ -555,6 +555,7 @@
   //push on form submit
       if (form) {
           form.addEventListener('submit', function (evt) {
+            alert("test");
               evt.preventDefault();
               firebasePush(inputEmail, inputPhone, inputMessage, inputName);
 
